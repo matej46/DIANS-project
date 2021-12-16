@@ -1,0 +1,126 @@
+
+#navmenu {
+    list-style-type:none;
+    margin: 0;
+/*margin-bottom: 15px;*/
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  /*    background-color: #909998;*/
+    position: sticky;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: inline-block;
+  /*  text-align: center;*/
+
+
+}
+#div1 ul li {
+    //float: left;
+
+display: inline-block;
+
+
+}
+#div1 ul li a{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    padding: 14px 16px;
+    font-size: 20px;
+    margin-left: 15px;
+
+}
+li a:hover {
+    background-color: #04AA6d;
+}
+.active {
+    background-color: #04AA6d;
+}
+#hr1 {
+    margin: 0;
+    padding: 0;
+}
+.welcome {
+    margin-top:0;
+    padding-top: 0;
+    margin-bottom: 30px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-weight: normal;
+}
+body{
+/*  background-color:  #ece2cd;*/
+    background-color: #333;
+    margin: 0;
+    padding: 0;
+}
+h3 {
+    //font-family: 'Corinthia', cursive;
+    font-family: 'Dancing Script', cursive;
+    //font-family: 'Indie Flower', cursive;
+    font-size: 28px;
+}
+h1{
+    margin-bottom: 1px;
+    Font-family: 'Bakbak One', cursive;
+    font-size: 20px;
+
+
+
+}
+#div2 {
+
+margin-top:100px;
+    margin-bottom: 20px;
+}
+#aboutusdiv {
+
+background-color: #ece4cd;
+
+    text-align: center;
+
+
+}
+#div1 ul .firstlink {
+margin-left: 1050px;
+}
+#image {
+
+  display: flex;
+   justify-content: center;
+}
+#travel {
+    display: inline;
+    margin-left: 35px;
+    font-size: 20px;
+    color: white;
+}
+.mapouter {
+    display: flex;
+  justify-content: center;
+
+    text-align: center;
+}
+.gmap_canvas {
+    display: flex;
+justify-content: center;
+}
+#gmap_canvas {
+
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+#form {
+    text-align: center;
+    margin-bottom: 55px;
+}
