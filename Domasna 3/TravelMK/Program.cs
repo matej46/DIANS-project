@@ -1,7 +1,16 @@
+using Microsoft.EntityFrameworkCore;
+using TravelMK.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Add database
+builder.Services.AddDbContext<HotelContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("default"));
+});
 
 var app = builder.Build();
 
