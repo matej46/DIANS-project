@@ -8,13 +8,15 @@ namespace TravelMK.Controllers
     public class HomeController : Controller
     {
         private readonly HotelContext db;
+
         public HomeController(HotelContext db)
         {
             this.db = db;
         }
+
         public IActionResult Index()
         {
-            if (db.Hotels.Count() < 107) // temporary, should be removed when deployed
+            /*if (db.Hotels.Count() < 107) // temporary, should be removed when deployed
             {
                 string data = System.IO.File.ReadAllText("Data/hotelslist.txt");
 
@@ -39,9 +41,9 @@ namespace TravelMK.Controllers
                         db.SaveChanges();
                     }
                 }
-            }
-
-            return View();
+            }*/
+            
+            return View(db.Hotels.ToList());
         }
 
         public IActionResult Favorites()
