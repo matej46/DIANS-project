@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "AG//uEr+i0CeGfBOl1WeMp/S+gUWC1WPNdenCP3n0jtl7GlN7fgseS0whRTX1nDe/vUdPQ1r5/bwe5zG4E7x8Q==",
+  "dgSpecHash": "jetoDlXH8KLWfWghUDu1jQsUWN5Pk1QsN7SgAeThEK8E69OiDr3qOqJZusbpYLATINOsoJLgSk+VncwBGUtiPQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Pc\\Desktop\\DIANS-project\\Domasna 3\\TravelMK\\TravelMK.csproj",
   "expectedPackageFiles": [
@@ -33,6 +33,7 @@
     "C:\\Users\\Pc\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Pc\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Pc\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\Pc\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\Pc\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\Pc\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",
     "C:\\Users\\Pc\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",

@@ -1,7 +1,38 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model IEnumerable<Hotel>
+@{
+    ViewData["Title"] = "Index";
 }
 
-<div class="text-center">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+        
+<body>
+    <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-</div>
+
+    <table id='hotelsTableEN'>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Municipality</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var hotel in Model) {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => hotel.Name_EN)</td>
+                    <td>@Html.DisplayFor(modelItem => hotel.Municipality_EN)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    @section Scripts {
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#hotelsTableEN').DataTable();
+            })
+        </script>
+    }
+    </div>
+</body>
