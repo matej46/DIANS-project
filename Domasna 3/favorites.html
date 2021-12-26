@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hotels</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+</head>
+<body>
+<div id="menu">
+    <ul id="navmenu">
+        <span id="logo"><img src="images/logo TravelMacedonia.png" height="23" width="190" style="margin-top: 14px"/></span>
+        <span id="menuItems">
+            <li><a href="home.html">Home</a></i></li>
+            <li><a href="favorites.html" class="active">Favorites</a></i></li>
+
+            <!--<li><a href="aboutus.html">About us</a></li>
+            <li><a href="favorites.html">Hotels</a></li>
+            <li><a href="contactus.html">Contact</a></li>-->
+        </span>
+    </ul>
+</div>
+    <hr id="hr1" style="color: white">
+    <div class="content">
+        <div>
+            <form id="form" role="search">
+                <input type="text" id="query" name="q"
+                       placeholder="Search a hotel in your favorite list"
+                       aria-label="Search through site content"
+                       class="hotelsSearchBar"
+                >
+                <input type="submit" value="" class="submitButton"><i class="fa fa-user icon"></i></input>
+            </form>
+        </div>
+        <div class="buttons">
+            <button class="sort sortName">
+                Sort by Name
+            </button>
+            <button class="sort sortDistance">
+                Sort by Distance
+            </button>
+        </div>
+        <div class="hotels">
+            <div class="hotelSingle">
+                <div class="hotel-img">
+                    <img src="./images/skopje-mariot.jpg" />
+                </div>
+                <div class="hotel-info">
+                    <div class="hotel-name">
+                        <div>
+                            <span><p class="hotelName">Skopje Marriott Hotel</p></span>
+                            <span><img src="images/heart.png" height="16" /></span>
+                        </div>
+                        <div>
+                            <div class="stars">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <p>200m from center</p>
+                        </div>
+                    </div>
+                    <div class="hotel-contact">
+                        <div class="hotel-contact-side">
+                            <span class="hotel-contact-side-item">
+                                <i class="fa fa-map-marker" style="color: #d38900"></i>
+                                <p style="display: inline">Skopje</p>
+                            </span>
+                            <span class="hotel-contact-side-item">
+                                <i class="fa fa-location-arrow" style="color: #d38900" ></i>
+                                <p style="display: inline">Navigate to Skopje Marriott Hotel</p>
+                            </span>
+                        </div>
+                        <div class="hotel-contact-side hotel-contact-side-item">
+                            <img src="images/phoneIcon.png" height="16"/>
+                            <p style="display: inline">02 510 2510</p>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="visitButton">
+                            Visit website
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

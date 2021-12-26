@@ -9,30 +9,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 <body>
 
 
 <!--<h1 id="welcome">Travel Macedonia </h1>-->
-<div id="div1">
+<div id="menu">
     <ul id="navmenu">
-        <p id="travel">TravelMacedonia</p>
-        <li><a href="index.html"  class="active firstlink">Home</a></i></li>
-        <li><a href="aboutus.html">About us</a></li>
-        <li><a href="hotels.html">Hotels</a></li>
-        <li><a href="contactus.html">Contact</a></li>
+        <span id="logo"><img src="images/logo TravelMacedonia.png" height="23" width="190" style="margin-top: 14px"/></span>
+        <span id="menuItems">
+            <li><a href="home.html" class="active">Home</a></i></li>
+            <li><a href="favorites.html">Favorites</a></i></li>
+
+            <!--<li><a href="aboutus.html">About us</a></li>
+            <li><a href="favorites.html">Hotels</a></li>
+            <li><a href="contactus.html">Contact</a></li>-->
+        </span>
     </ul>
 </div>
 <hr id="hr1" style="color: white">
 <div id="div2">
     <h1 class="welcome">Choose your next location </h1>
 </div>
-<form id="form" role="search">
+<div>
+    <form id="form" role="search">
+        <input type="text" id="query" name="q"
+               placeholder="Search by city or hotel name"
+               aria-label="Search through site content"
+               class="hotelsSearchBar"
+        >
+        <input type="submit" value="" class="submitButton"><i class="fa fa-search" style="margin-left: -25px"></i></input>
+    </form>
+</div>
+<!--<form id="form" role="search">
     <input type="search" id="query" name="q"
            placeholder="Search.."
            aria-label="Search through site content">
     <button>Search</button>
-</form>
+</form>-->
 <h1 class="welcome">Hotels near you</h1>
 <div class="mapouter">
 
