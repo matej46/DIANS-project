@@ -15,16 +15,16 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Pc\Desktop\DIANS-project\Domasna 3\TravelMK
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Pc/Desktop/DIANS-project/Domasna 3/TravelMK/Views/Home/Contact.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Pc/Desktop/DIANS-project/Domasna 3/TravelMK/Views/Home/Favorites.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGYXZvcml0ZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Pc/Desktop/DIANS-project/Domasna 3/TravelMK/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Pc/Desktop/DIANS-project/Domasna 3/TravelMK/Views/Home/Map.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNYXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Pc/Desktop/DIANS-project/Domasna 3/TravelMK/Views/Shared/Error.cshtml]
