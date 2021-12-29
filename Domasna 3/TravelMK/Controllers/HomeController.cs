@@ -46,6 +46,12 @@ namespace TravelMK.Controllers
             return View(db.Hotels.ToList());
         }
 
+        public IActionResult DetailsHotel(string id)
+        {
+            var model = db.Hotels.Find(id);
+            return View(model);
+        }
+
         public IActionResult Favorites()
         {
             return View();

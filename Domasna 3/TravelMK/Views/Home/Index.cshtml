@@ -25,6 +25,8 @@
                 <tr>
                     <td>@Html.DisplayFor(modelItem => hotel.Name_EN)</td>
                     <td>@Html.DisplayFor(modelItem => hotel.Municipality_EN)</td>
+                    <td>@Html.ActionLink("Details", "DetailsHotel", new { id = hotel.Id })</td>
+                    <td><a href="">Add to Favourites</a></td>
                 </tr>
             }
         </tbody>
