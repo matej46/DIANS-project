@@ -57,10 +57,25 @@ namespace TravelMK.Controllers
         public IActionResult AddFavorite(string id)
         {
             var model = db.Hotels.Find(id);
-            favoritesList.Add(model);
+            if (!favoritesList.Contains(model))
+            {
+                favoritesList.Add(model);
+                return View("Favorites", favoritesList);
+            }
             return View("Favorites", favoritesList); // redirects user to Favorites site after adding hotel to favorites
             //return RedirectToAction("Index"); // redirects user to Index site after adding hotel to favorites
         }
+        public IActionResult RemoveFavorite(string id)
+        {
+            var model = db.Hotels.Find(id);
+            if (favoritesList.Contains(model))
+            {
+
+            }
+            favoritesList.Remove(model);
+            return View("Favorites", favoritesList);
+        }
+            
 
         public IActionResult Favorites()
         {
