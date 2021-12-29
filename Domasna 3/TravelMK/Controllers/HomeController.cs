@@ -86,7 +86,7 @@ namespace TravelMK.Controllers
             return View(favoritesList);
         }
 
-        public IActionResult Map()
+        public IActionResult Contact()
         {
             return View();
         }
