@@ -4,6 +4,7 @@
 }
 
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js" />
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
    crossorigin=""/>
@@ -29,6 +30,7 @@
                     <td>@Html.DisplayFor(modelItem => hotel.Municipality_EN)</td>
                     <td>@Html.ActionLink("Details", "DetailsHotel", new { id = hotel.Id })</td>
                     <td>@Html.ActionLink("Add to Favorites", "AddFavorite", new { id = hotel.Id })</td>
+                    <td><button class='btn1'>View</button></td>
                 </tr>
             }
         </tbody>
@@ -43,12 +45,52 @@
                 $('#hotelsTableEN').DataTable();
             });
 
+            var map;
+            var userLat, userLon;
+            
+            $('#hotelsTableEN').on('ready', function () {
+                //for each row, take the first <td>, find the hotel's latlon and write the distance in innerHTML.
+            });
+
+            /*function distanceTo(x, y) { // distance from the user to the hotel, not a route distance
+                var x = navigator.geolocation.getCurrentPosition().coords.latitude;
+                var y = navigator.geolocation.getCurrentPosition().coords.longitude;
+                
+                const R = 6371e3;
+                const fi1 = x * Math.PI / 180;
+                const fi2 = y * Math.PI / 180;
+                const deltaFi = (lat - x) * Math.PI / 180;
+                const deltaL = (lon - y) * Math.PI / 180;
+            
+                const a = Math.sin(deltaFi / 2) * Math.sin(deltaFi / 2) +
+                        Math.cos(fi1) * Math.cos(fi2) * Math.sin(deltaFi / 2) * Math.sin(deltaL / 2);
+                const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+                const result = (R * c) / 1000.00;
+
+                return result;
+            }*/
+
             navigator.geolocation.getCurrentPosition(success, fail, {
                 enableHighAccuracy: true
             });
 
             function success(pos) {
-                var map = L.map('map').setView([pos.coords.latitude, pos.coords.longitude], 15);
+                userLat = pos.coords.latitude;
+                userLon = pos.coords.longitude;
+
+                setMap(pos.coords.latitude, pos.coords.longitude);
+            }
+
+            function fail() {
+                alert("Location error.");
+            }
+
+            function setMap(lat, lon) {
+                if (map != undefined) {
+                    map.remove();
+                }
+                
+                map = L.map('map').setView([lat, lon], 15);
                 
                 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
                     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -58,45 +100,27 @@
                     zoomOffset: -1,
                     accessToken: 'pk.eyJ1IjoiaWl2YW5vdjIiLCJhIjoiY2t4YndqbjRyMTJoMjJva3RtMzFpNWRjZiJ9.PWe34SauE3pPKeTU3PZWKg'
                 }).addTo(map);
-
-                /*function distanceTo(lat, lon) { // distance from the user to the hotel, not a route distance
-                    var R = 6371e3;
-                    var fi1 = pos.coords.latitude * Math.PI / 180;
-                    var fi2 = pos.coords.longitude * Math.PI / 180;
-                    var deltaFi = (lat - pos.coords.latitude) * Math.PI / 180;
-                    var deltaL = (lon - pos.coords.longitude) * Math.PI / 180;
-            
-                    var a = Math.sin(deltaFi / 2) * Math.sin(deltaFi / 2) +
-                            Math.cos(fi1) * Math.cos(fi2) * Math.sin(deltaFi / 2) * Math.sin(deltaL / 2);
-                    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-                    var result = (R * c) / 1000.00;
-
-                    return result;
-                }*/
-
-                // place hotel markers
-                @foreach (var h in Model) {
-                    <text>
-                        var marker = L.marker([@h.Lat, @h.Lon]).addTo(map);
-                        marker.bindPopup('@h.Name_EN').openPopup();
-                    </text>
-                }
-
+                
                 // use a circle instead of a marker for the user to show an approximate location
-                var circle = L.circle([pos.coords.latitude, pos.coords.longitude], {
+                var circle = L.circle([userLat, userLon], {
                     color: 'red',
                     fillColor: '#f03',
                     fillOpacity: 0.5,
                     radius: 15
                 }).addTo(map);
+                
+                // place hotel markers
+                @foreach (var h in Model) {
+                    <text>
+                        var marker = L.marker([@h.Lat, @h.Lon]).addTo(map);
+                        marker.bindPopup('@h.Name_EN');
+                    </text>
+                }
             }
 
-            function fail() {
-                alert("Location error.");
-            }
-
-            /*function setMap(pos) {
-                var map = L.map('map').setView([pos.coords.latitude, pos.coords.longitude], 15);
+            // find a route for the hotel
+            $('.btn1').on('click', function () {
+                var chosenHotel = this.parentNode.parentNode.childNodes[1].textContent;
                 
                 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
                     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -108,6 +132,14 @@
                 }).addTo(map);
             }*/
 
+                @foreach (var hotel in Model) {
+                    <text>
+                        if ('@hotel.Name_EN' == chosenHotel) {
+                            setMap('@hotel.Lat', '@hotel.Lon');
+                        }
+                    </text>
+                }
+            });
         </script>
     }
     </div>
