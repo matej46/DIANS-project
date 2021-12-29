@@ -18,6 +18,8 @@
             <tr>
                 <th>Name</th>
                 <th>Municipality</th>
+                <th>Hotel Details</th>
+                <th>Add Favorite</th>
             </tr>
         </thead>
         <tbody>
@@ -26,7 +28,7 @@
                     <td>@Html.DisplayFor(modelItem => hotel.Name_EN)</td>
                     <td>@Html.DisplayFor(modelItem => hotel.Municipality_EN)</td>
                     <td>@Html.ActionLink("Details", "DetailsHotel", new { id = hotel.Id })</td>
-                    <td><a href="">Add to Favourites</a></td>
+                    <td>@Html.ActionLink("Add to Favorites", "AddFavorite", new { id = hotel.Id })</td>
                 </tr>
             }
         </tbody>
@@ -105,6 +107,7 @@
                     accessToken: 'pk.eyJ1IjoiaWl2YW5vdjIiLCJhIjoiY2t4YndqbjRyMTJoMjJva3RtMzFpNWRjZiJ9.PWe34SauE3pPKeTU3PZWKg'
                 }).addTo(map);
             }*/
+
         </script>
     }
     </div>
