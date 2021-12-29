@@ -1,4 +1,29 @@
-﻿@{
+﻿@model List<TravelMK.Models.Hotel>
+
+@{
     ViewData["Title"] = "Favorites";
 }
 <h1>@ViewData["Title"]</h1>
+
+<h3>Favorite Hotels</h3>
+
+<ul>
+    @{ 
+        if(Model == null)
+            {
+                <h4> There are no hotels in favorites </h4>
+            }
+        else
+            foreach(var hotel in Model)
+            {
+                <li>
+                    <h4>
+                        @hotel.Name_EN |
+                        @hotel.Municipality_EN |
+                        @Html.ActionLink("Details", "DetailsHotel", new { id = hotel.Id }) |
+                    </h4>
+                </li>
+            }
+    }
+
+</ul>

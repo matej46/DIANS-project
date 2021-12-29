@@ -9,6 +9,8 @@ namespace TravelMK.Controllers
     {
         private readonly HotelContext db;
 
+        static List<Hotel> favoritesList = new List<Hotel>() { };
+
         public HomeController(HotelContext db)
         {
             this.db = db;
@@ -52,9 +54,17 @@ namespace TravelMK.Controllers
             return View(model);
         }
 
+        public IActionResult AddFavorite(string id)
+        {
+            var model = db.Hotels.Find(id);
+            favoritesList.Add(model);
+            //return View("Favorites", favoritesList); //when you add new item to Favorites it takes you to the Favorites page
+            return RedirectToAction("Index");
+        }
+
         public IActionResult Favorites()
         {
-            return View();
+            return View(favoritesList);
         }
 
         public IActionResult Map()

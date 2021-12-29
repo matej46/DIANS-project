@@ -12,7 +12,7 @@
     
     <h5> Municipality: @Model.Municipality_EN / @Model.Municipality_MK</h5>
 
-    <h5> MAYBE: add button to route you to hotel !!?? </h5>
+    <h5> @Html.ActionLink("Add to Favorites", "AddFavorite", new { id = @Model.Id }) </h5>
     
 </div>
 <div style="position: fixed; bottom: 70px;">
