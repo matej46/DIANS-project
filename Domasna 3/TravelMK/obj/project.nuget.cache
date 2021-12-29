@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "zgzcwuWLuLWCDCCpx9aETP3VOVMfN/ozzNtlFE9y4UupnQF3PWhta9Lg+4JPQ+MCSLTBeK6XxAYhYRQkOm8BVQ==",
+  "dgSpecHash": "uxCg+ziJ4DWAdS8MJ8Z/FxmLAndCDjqteqX0YXDlCwuJ0wPk4TSOmQG5X48ZYI1FEe2czFvuy6WUmBfoymlzPA==",
   "success": true,
   "projectFilePath": "C:\\Users\\ivili\\Desktop\\Testing\\DiAnS\\DiAnS Project - Git Repository\\Domasna 3\\TravelMK\\TravelMK.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ivili\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\ivili\\.nuget\\packages\\jquery\\1.7.0\\jquery.1.7.0.nupkg.sha512",
+    "C:\\Users\\ivili\\.nuget\\packages\\jquery.datatables\\1.10.15\\jquery.datatables.1.10.15.nupkg.sha512",
     "C:\\Users\\ivili\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\ivili\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",
     "C:\\Users\\ivili\\.nuget\\packages\\messagepackanalyzer\\2.1.152\\messagepackanalyzer.2.1.152.nupkg.sha512",
