@@ -58,8 +58,8 @@ namespace TravelMK.Controllers
         {
             var model = db.Hotels.Find(id);
             favoritesList.Add(model);
-            //return View("Favorites", favoritesList); //when you add new item to Favorites it takes you to the Favorites page
-            return RedirectToAction("Index");
+            return View("Favorites", favoritesList); //when you add new item to Favorites it takes you to the Favorites page
+            //return RedirectToAction("Index");
         }
 
         public IActionResult Favorites()
