@@ -3,27 +3,42 @@
 @{
     ViewData["Title"] = "Favorites";
 }
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+
 <h1>@ViewData["Title"]</h1>
 
+<body>
 <h3>Favorite Hotels</h3>
 
-<ul>
-    @{ 
-        if(Model == null)
-            {
-                <h4> There are no hotels in favorites </h4>
+    <table id='favHotelTable'>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Municipality</th>
+                <th>Hotel Details</th>
+                <th>Remove Favorite</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var hotel in Model) {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => hotel.Name_EN)</td>
+                    <td>@Html.DisplayFor(modelItem => hotel.Municipality_EN)</td>
+                    <td>@Html.ActionLink("Details", "DetailsHotel", new { id = hotel.Id })</td>
+                    <td>@Html.ActionLink("Remove from Favorites", "RemoveFavorite", new { id = hotel.Id })</td>
+                </tr>
             }
-        else
-            foreach(var hotel in Model)
-            {
-                <li>
-                    <h4>
-                        @hotel.Name_EN |
-                        @hotel.Municipality_EN |
-                        @Html.ActionLink("Details", "DetailsHotel", new { id = hotel.Id }) |
-                    </h4>
-                </li>
-            }
-    }
+        </tbody>
+    </table
 
-</ul>
+    @section Scripts{
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                $('#favHotelTable').DataTable();
+            });
+        </script>
+    }
+</body>
