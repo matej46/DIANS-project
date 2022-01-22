@@ -9697,19 +9697,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ivili\\.nuget\\packages\\": {}
+    "C:\\Users\\Pc\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ivili\\Desktop\\Testing\\DiAnS\\DiAnS Project - Git Repository\\Domasna 3\\TravelMK\\TravelMK.csproj",
+      "projectUniqueName": "C:\\Users\\Pc\\Desktop\\DIANS-project\\Domasna 3\\TravelMK\\TravelMK.csproj",
       "projectName": "TravelMK",
-      "projectPath": "C:\\Users\\ivili\\Desktop\\Testing\\DiAnS\\DiAnS Project - Git Repository\\Domasna 3\\TravelMK\\TravelMK.csproj",
-      "packagesPath": "C:\\Users\\ivili\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ivili\\Desktop\\Testing\\DiAnS\\DiAnS Project - Git Repository\\Domasna 3\\TravelMK\\obj\\",
+      "projectPath": "C:\\Users\\Pc\\Desktop\\DIANS-project\\Domasna 3\\TravelMK\\TravelMK.csproj",
+      "packagesPath": "C:\\Users\\Pc\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Pc\\Desktop\\DIANS-project\\Domasna 3\\TravelMK\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ivili\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9776,7 +9776,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
