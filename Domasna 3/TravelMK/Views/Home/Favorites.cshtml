@@ -16,8 +16,8 @@
             <tr>
                 <th>Name</th>
                 <th>Municipality</th>
-                <th>Hotel Details</th>
-                <th>Remove Favorite</th>
+                <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -26,11 +26,11 @@
                     <td>@Html.DisplayFor(modelItem => hotel.Name_EN)</td>
                     <td>@Html.DisplayFor(modelItem => hotel.Municipality_EN)</td>
                     <td>@Html.ActionLink("Details", "DetailsHotel", new { id = hotel.Id })</td>
-                    <td>@Html.ActionLink("Remove from Favorites", "RemoveFavorite", new { id = hotel.Id })</td>
+                    <td>@Html.ActionLink("Remove from favorites", "RemoveFavorite", new { id = hotel.Id })</td>
                 </tr>
             }
         </tbody>
-    </table
+    </table>
 
     @section Scripts{
         <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>

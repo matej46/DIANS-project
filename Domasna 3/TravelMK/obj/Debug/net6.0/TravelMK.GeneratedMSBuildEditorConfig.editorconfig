@@ -15,10 +15,6 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Pc\Desktop\DIANS-project\Domasna 3\TravelMK
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Pc/Desktop/DIANS-project/Domasna 3/TravelMK/Views/Home/Contact.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Pc/Desktop/DIANS-project/Domasna 3/TravelMK/Views/Home/DetailsHotel.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXRhaWxzSG90ZWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
