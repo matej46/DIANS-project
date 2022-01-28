@@ -18,69 +18,43 @@ namespace TravelMK.Controllers
 
         public IActionResult Index()
         {
-            /*if (db.Hotels.Count() < 107) // temporary, should be removed when deployed
-            {
-                string data = System.IO.File.ReadAllText("Data/hotelslist.txt");
-
-                foreach (string row in data.Split("\n"))
-                {
-                    string Id = row.Split(",")[0]; // there might be a better way to check for duplicates
-                    int countedHotels = db.Hotels.Where(h => h.Id == Id).Count();
-                    
-                    if (countedHotels == 0)
-                    {
-                        db.Hotels.Add(new Hotel
-                        {
-                            Id = row.Split(",")[0],
-                            Lat = row.Split(",")[1],
-                            Lon = row.Split(",")[2],
-                            Name_EN = row.Split(",")[3],
-                            Name_MK = row.Split(",")[4],
-                            Municipality_EN = row.Split(",")[5],
-                            Municipality_MK = row.Split(",")[6]
-                        });
-
-                        db.SaveChanges();
-                    }
-                }
-            }*/
-            
             return View(db.Hotels.ToList());
         }
 
         public IActionResult DetailsHotel(string id)
         {
-            var model = db.Hotels.Find(id);
-            return View(model);
+            var hotel = db.Hotels.Find(id);
+            if (hotel == null)
+            {
+                throw new ArgumentNullException("The selected hotel could not be found in the database.");
+            }
+
+            return View(hotel);
         }
 
         public IActionResult AddFavorite(string id)
         {
-            foreach (var item in favoritesList)
+            if (!favoritesList.Exists(hotel => hotel.Id == id))
             {
-                if (item.Id == id)
-                    return View("Favorites", favoritesList);
+                var hotel = db.Hotels.Find(id);
+                if (hotel == null)
+                {
+                    throw new ArgumentNullException("The selected hotel could not be found in the database.");
+                }
+
+                favoritesList.Add(hotel);
             }
-            var model = db.Hotels.Find(id);
-            favoritesList.Add(model);
-            return View("Favorites", favoritesList); // redirects user to Favorites site after adding hotel to favorites
-            //return RedirectToAction("Index"); // redirects user to Index site after adding hotel to favorites
+
+            return View("Favorites", favoritesList);
         }
+
         public IActionResult RemoveFavorite(string id)
         {
-            var model = db.Hotels.Find(id);
-            foreach (var item in favoritesList)
-            {
-                if (item.Id == id)
-                {
-                    favoritesList.Remove(item);
-                    return View("Favorites", favoritesList);
-                }
-            }
+            favoritesList.RemoveAll(hotel => hotel.Id == id);
+
             return View("Favorites", favoritesList);
         }
             
-
         public IActionResult Favorites()
         {
             return View(favoritesList);

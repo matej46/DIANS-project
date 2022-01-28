@@ -25,6 +25,7 @@ namespace TravelMK.Models
         [Required]
         [MaxLength(30)]
         public string Municipality_MK { get; set; }
+
         public Hotel() { }
     }
 }
