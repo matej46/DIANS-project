@@ -1,18 +1,81 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-color: #303030;
+    color: white;
+}
+
+.buttonFindRoute {
+    background: orange;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+}
+
+#hotelsTableEN {
+    background: #303030;
+}
+
+#hotelsTableEN {
+    background-color: #303030 !important;
+}
+
+table.dataTable tbody tr.odd {
+    background-color: #303030 !important;
+}
+
+table.dataTable tbody tr.even {
+    background-color: #303030 !important;
+}
+
+tr a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+label {
+    color: white;
+}
+
+select {
+    color: white;
+}
+
+.dataTables_wrapper .dataTables_length {
+    margin-bottom: 20px;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+    width: 270px
+}
+
+#hotelsTableEN_paginate {
+    color: white;
+}
+
+.paginate_button {
+    color: white !important;
+}
+
+.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
+    color: white !important;
+}
+ 
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    color: white !important;
 }

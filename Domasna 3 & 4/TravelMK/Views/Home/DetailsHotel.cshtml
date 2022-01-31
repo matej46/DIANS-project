@@ -1,10 +1,13 @@
-﻿@model TravelMK.Models.Hotel
+﻿
+@model TravelMK.Models.Hotel
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
 
 @{
     ViewData["Title"] = "Hotel Details";
 }
 
-<h1>@Model.Name_EN / @Model.Name_MK</h1>
+<h2>@Model.Name_EN / @Model.Name_MK</h2>
 <br/>
 
 <div>
@@ -15,5 +18,5 @@
     <h5> @Html.ActionLink("Add to Favorites", "AddFavorite", new { id = @Model.Id }) </h5>
 </div>
 <div style="position: fixed; bottom: 70px;">
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" style="text-decoration:none; color:white;">Back to List</a>
 </div>
